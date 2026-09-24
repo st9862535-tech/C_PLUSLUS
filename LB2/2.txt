@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double x, y;
+
+    cout << "Enter coordinates (x y): ";
+    cin >> x >> y;
+
+    bool result = (x > 0 && y > 1.0 / x);
+    
+    cout << "The point is " << (result ? "INSIDE" : "OUTSIDE") << " the shaded area." << endl;
+
+    return 0;
+}

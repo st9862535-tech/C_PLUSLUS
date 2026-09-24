@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double x, gamma, y;
+
+    cout << "Enter x: ";
+    cin >> x;
+
+    cout << "Enter gamma (in radians): ";
+    cin >> gamma;
+
+    if (x <= 0) {
+        y = x * x - sin(gamma);
+    } else {
+        y = sqrt(x) + cos(gamma);
+    }
+
+    cout << "Y = " << y << endl;
+
+    return 0;
+}
