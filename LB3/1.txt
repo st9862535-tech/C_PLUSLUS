@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int N;
+
+    cout << "Enter a three-digit positive number: ";
+    cin >> N;
+
+    if (N >= 100 && N <= 999) {
+        int hundreds = N / 100;         
+        int tens = (N / 10) % 10;      
+        int units = N % 10;             
+
+        int sumOfGreater = 0;
+
+        if (hundreds > 3) sumOfGreater += hundreds;
+        if (tens > 3) sumOfGreater += tens;
+        if (units > 3) sumOfGreater += units;
+
+        cout << "Original number: " << N << endl;
+        cout << "Sum of digits greater than 3: " << sumOfGreater << endl;
+    } else {
+        cout << "Error: The number is not three-digit or positive." << endl;
+    }
+
+    return 0;
+}

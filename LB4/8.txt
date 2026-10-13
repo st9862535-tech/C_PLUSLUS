@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int valA, valB;
+    
+    cout << "Enter two numbers: ";
+    if (!(cin >> valA >> valB)) {
+        return 1;
+    }
+
+    if (valA == 0 || valB == 0) {
+        cout << "Cannot divide by zero\n";
+        return 1;
+    }
+
+    double invA = 1.0 / valA;
+    double invB = 1.0 / valB;
+
+    double tolerance = 1e-6;
+
+    if (fabs(invA - invB) < tolerance) {
+        cout << "Results are equal (by 0.000001 epsilon)\n";
+    } else {
+        cout << "Results are not equal (by 0.000001 epsilon)\n";
+    }
+
+    return 0;
+}

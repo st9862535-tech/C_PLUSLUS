@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+    char countryCode;
+
+    cout << "Enter the first letter of the country (U, F, G, J): ";
+    cin >> countryCode;
+
+    countryCode = toupper(countryCode);
+
+    switch (countryCode) {
+        case 'U':
+            cout << "Country: Ukraine" << endl;
+            cout << "Population: 38M | Cities: 461" << endl;
+            break;
+        case 'F':
+            cout << "Country: France" << endl;
+            cout << "Population: 68M | Cities: 35000" << endl;
+            break;
+        case 'G':
+            cout << "Country: Germany" << endl;
+            cout << "Population: 84M | Cities: 2050" << endl;
+            break;
+        case 'J':
+            cout << "Country: Japan" << endl;
+            cout << "Population: 124M | Cities: 815" << endl;
+            break;
+        default:
+            cout << "Error: Unknown country letter." << endl;
+            break;
+    }
+
+    return 0;
+}
