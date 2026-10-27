@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, digit;
+    long long product = 1;
+    bool hasOddDigits = false;
+
+    cout << "Enter natural number N: ";
+    cin >> N;
+
+    if (N <= 0) {
+        cout << "Error: N must be a natural number." << endl;
+        return 1;
+    }
+
+    int temp = N;
+
+    while (temp > 0) {
+        digit = temp % 10;
+        if (digit % 2 != 0) {
+            product *= digit;
+            hasOddDigits = true;
+        }
+        temp /= 10;
+    }
+
+    cout << "Number N = " << N << endl;
+    if (hasOddDigits) {
+        cout << "Product of odd digits = " << product << endl;
+    } else {
+        cout << "No odd digits in the number." << endl;
+    }
+
+    return 0;
+}

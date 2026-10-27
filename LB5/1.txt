@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>    
+#include <iomanip>  
+
+using namespace std;
+
+double calculate_y(double x) {
+    return pow(sin(x), 2) + fabs(5 * x - 15);
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    const int N = 5;
+    double x[N], y[N];
+
+    cout << "Enter " << N << " values of x:\n";
+    for (int i = 0; i < N; i++) {
+        cout << "x[" << i + 1 << "] = ";
+        cin >> x[i];
+        y[i] = calculate_y(x[i]);
+    }
+
+    cout << "\nResults:\n";
+    cout << fixed << setprecision(4); // 4 знаки після коми
+    cout << "--------------------------------\n";
+    cout << "|   i   |     x     |     y     |\n";
+    cout << "--------------------------------\n";
+    
+    for (int i = 0; i < N; i++) {
+        cout << "| " << setw(3) << i + 1 << "   | "
+             << setw(9) << x[i] << " | "
+             << setw(9) << y[i] << " |\n";
+    }
+    cout << "--------------------------------\n";
+
+    return 0;
+}

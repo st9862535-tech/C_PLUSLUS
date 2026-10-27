@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+double compute_value(double val) {
+    return pow(val, 0.25) + 6.0;
+}
+
+int main() {
+    double start, finish, step;
+
+    cout << "Enter start: ";
+    cin >> start;
+    cout << "Enter finish: ";
+    cin >> finish;
+    cout << "Enter step: ";
+    cin >> step;
+
+    cout << "\n--------------------------------\n";
+    cout << "|     x     |        y        |\n";
+    cout << "--------------------------------\n";
+
+    for (double curr = start; curr <= finish + 1e-9; curr += step) {
+        if (curr >= 0) {
+            double res = compute_value(curr);
+            cout << "| " << setw(9) << fixed << setprecision(4) << curr 
+                 << " | " << setw(13) << fixed << setprecision(6) << res << " |\n";
+        } else {
+            cout << "| " << setw(9) << fixed << setprecision(4) << curr 
+                 << " |    not in domain   |\n";
+            break;
+        }
+    }
+    cout << "--------------------------------\n";
+
+    return 0;
+}
